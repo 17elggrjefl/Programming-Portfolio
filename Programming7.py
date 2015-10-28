@@ -200,6 +200,58 @@ def food_tax(subtotal, grocery):
 	else:
 		return subtotal * .0725
 		
+def same(a, b, c):
+	return a == b == c
+
+def big3(james, irving, love):
+	if james >= irving and james >= love:
+		return james
+	elif irving >= james and irving >= love:
+		return irving
+	elif love >= james and love >= irving:
+		return love
+		
+def small_sum(a, b, c):
+	if a < b and b < c:
+		return a + b
+	elif b < a and c < a:
+		return b + c
+	else:
+		return a + c
+
+def meat_loaf(onions, ketchup, garlic):
+	if onions and garlic and not ketchup:
+		return True
+	elif onions and ketchup and not garlic:
+		return True
+	elif garlic and ketchup and not onions:
+		return True
+	else:
+		return False
+
+def big3reorder(a, b, c):
+	big = big3(a, b, c)
+	if a == big:
+		small = smallest(b, c)
+		if b == small:
+			middle = c
+		else:
+			middle = b
+	elif b == big:
+		small = smallest(a, c)
+		if a == small:
+			middle = c
+		else:
+			middle = a
+	elif c == big:
+		small = smallest(a, b)
+		if a == small:
+			middle = b
+		else:
+			middle = a
+	return big, middle, small
+	
+
 def main_conditionals():
 	print "testing biggest(500, 10): ", biggest(500, 10)
 	print "testing biggest(500, 1000): ", biggest(500, 1000)
@@ -212,6 +264,22 @@ def main_conditionals():
 	print "test letter_grade(95): ", letter_grade(95)
 	print "testing food_tax(12.45, True): ", food_tax(12.45, True)
 	print "testing food_tax(12.45, False): ", food_tax(12.45, False)
+	print "test same(7, 7, 7): ", same(7, 7, 7)
+	print "test same(1, 2, 4): ", same(1, 2, 4)
+	print "testing big3(3, 2, 1): ", big3(3, 2, 1)
+	print "testing big3(2, 3, 1): ", big3(2, 3, 1)
+	print "testing big3(1, 2, 3): ", big3(1, 2, 3)
+	print "testing big3(3, 3, 1): ", big3(3, 3, 1)
+	print "testing big3(1, 3, 3): ", big3(1, 3, 3)
+	print "testing big3(3, 1, 3): ", big3(3, 1, 3)
+	print "test small_sum(1, 2, 3): ", small_sum(1, 2, 3)
+	print "test small_sum(3, 2, 1): ", small_sum(3, 2, 1)
+	print "testing meat_loaf(True, True, False): ", meat_loaf(True, True, False)
+	print "testing meat_loaf(True, False, False): ", meat_loaf(True, False, False)
+	print "testing meat_loaf(True, True, True): ", meat_loaf(True, True, True)
+	print "test big3reorder(5, 8, 2): ", big3reorder(5, 8, 2)
+	
+	
 	
 	
 def main():
