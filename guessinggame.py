@@ -14,7 +14,7 @@ def take_guess(high, low, guesses):
 	resp = raw_input("Please enter a 0, 1, or a 2: ")
 	if int(resp) == 0:
 		print("I guessed it right!")
-		print  ("It took " + str(guesses) + "guesses!")
+		print  ("It took " + str(guesses) + " guesses!")
 	elif int(resp) ==2:
 		high = guess
 		take_guess(high, low, guesses +1)
